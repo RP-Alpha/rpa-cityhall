@@ -15,9 +15,16 @@
 
 ## ✨ Features
 
-- 🪪 **Licenses** - Purchase ID, Driver's, Weapon licenses
+- 🪪 **Licenses** - ID Card, Driver's, Weapons, Hunting, Business
 - 💼 **Job Center** - Apply for civilian employment
 - 🏛️ **Government Jobs** - Access city services
+- 🔐 **Permission System** - Staff and admin roles
+
+---
+
+## 📦 Dependencies
+
+- `rpa-lib` (Required)
 
 ---
 
@@ -27,8 +34,36 @@
 2. Extract to your `resources` folder
 3. Add to `server.cfg`:
    ```cfg
+   ensure rpa-lib
    ensure rpa-cityhall
    ```
+
+---
+
+## ⚙️ Configuration
+
+### Document Types
+
+```lua
+Config.Documents = {
+    ['id_card'] = { label = 'ID Card', price = 50 },
+    ['drivers_license'] = { label = "Driver's License", price = 250 },
+    ['weapons_license'] = { label = 'Weapons License', price = 5000 },
+    ['hunting_license'] = { label = 'Hunting License', price = 500 },
+    ['business_license'] = { label = 'Business License', price = 10000 }
+}
+```
+
+### Staff Permissions
+
+```lua
+Config.StaffPermissions = {
+    groups = {},
+    jobs = { 'cityhall' },
+    minGrade = 0,
+    onDuty = true
+}
+```
 
 ---
 
