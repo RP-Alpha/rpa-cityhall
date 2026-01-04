@@ -3,9 +3,11 @@ game 'gta5'
 
 author 'RP-Alpha'
 description 'RP-Alpha Cityhall and ID System'
-version '1.0.0'
+version '1.1.0'
 
 dependency 'rpa-lib'
+
+shared_script 'config.lua'
 
 ui_page 'html/index.html'
 
